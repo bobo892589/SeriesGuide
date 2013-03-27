@@ -2,7 +2,7 @@
   "extends" : "thirdParty.api",
   "abstract" : false,
   "root" : "https://1.myapp.appspot.com/_ah/api",
-  "name" : "deviceinfoendpoint",
+  "name" : "showendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
@@ -24,48 +24,13 @@
     "maxAge" : 0
   },
   "methods" : {
-    "deviceinfoendpoint.removeDeviceInfo" : {
-      "path" : "deviceinfo/{id}",
-      "httpMethod" : "DELETE",
-      "scopes" : [ ],
-      "audiences" : [ ],
-      "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.removeDeviceInfo",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "deviceinfoendpoint.insertDeviceInfo" : {
-      "path" : "deviceinfo",
-      "httpMethod" : "POST",
-      "scopes" : [ ],
-      "audiences" : [ ],
-      "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.insertDeviceInfo",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "deviceinfoendpoint.listDeviceInfo" : {
-      "path" : "deviceinfo",
+    "showendpoint.listShow" : {
+      "path" : "show",
       "httpMethod" : "GET",
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.listDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.listShow",
       "request" : {
         "parameters" : {
           "cursor" : {
@@ -83,13 +48,28 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "deviceinfoendpoint.getDeviceInfo" : {
-      "path" : "deviceinfo/{id}",
-      "httpMethod" : "GET",
+    "showendpoint.insertShow" : {
+      "path" : "show",
+      "httpMethod" : "POST",
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.getDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.insertShow",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "showendpoint.removeShow" : {
+      "path" : "show/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.removeShow",
       "request" : {
         "parameters" : {
           "id" : {
@@ -103,13 +83,33 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "deviceinfoendpoint.updateDeviceInfo" : {
-      "path" : "deviceinfo",
+    "showendpoint.getShow" : {
+      "path" : "show/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.getShow",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "showendpoint.updateShow" : {
+      "path" : "show",
       "httpMethod" : "PUT",
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.updateDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.updateShow",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -121,68 +121,73 @@
   },
   "descriptor" : {
     "schemas" : {
-      "DeviceInfo" : {
-        "id" : "DeviceInfo",
-        "type" : "object",
-        "properties" : {
-          "deviceRegistrationID" : {
-            "type" : "string"
-          },
-          "deviceInformation" : {
-            "type" : "string"
-          },
-          "timestamp" : {
-            "type" : "string",
-            "format" : "int64"
-          }
-        }
-      },
-      "CollectionResponse_DeviceInfo" : {
-        "id" : "CollectionResponse_DeviceInfo",
+      "CollectionResponse_Show" : {
+        "id" : "CollectionResponse_Show",
         "type" : "object",
         "properties" : {
           "items" : {
             "type" : "array",
             "items" : {
-              "$ref" : "DeviceInfo"
+              "$ref" : "Show"
             }
           },
           "nextPageToken" : {
             "type" : "string"
           }
         }
+      },
+      "Show" : {
+        "id" : "Show",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "getGlueId" : {
+            "type" : "string"
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "favorite" : {
+            "type" : "boolean"
+          },
+          "syncEnabled" : {
+            "type" : "boolean"
+          }
+        }
       }
     },
     "methods" : {
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.removeDeviceInfo" : {
+      "com.battlelancer.seriesguide.beta.ShowEndpoint.listShow" : {
         "response" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "CollectionResponse_Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.insertDeviceInfo" : {
+      "com.battlelancer.seriesguide.beta.ShowEndpoint.insertShow" : {
         "request" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "Show"
         },
         "response" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.listDeviceInfo" : {
+      "com.battlelancer.seriesguide.beta.ShowEndpoint.removeShow" : {
         "response" : {
-          "$ref" : "CollectionResponse_DeviceInfo"
+          "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.getDeviceInfo" : {
+      "com.battlelancer.seriesguide.beta.ShowEndpoint.getShow" : {
         "response" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.updateDeviceInfo" : {
+      "com.battlelancer.seriesguide.beta.ShowEndpoint.updateShow" : {
         "request" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "Show"
         },
         "response" : {
-          "$ref" : "DeviceInfo"
+          "$ref" : "Show"
         }
       }
     }
