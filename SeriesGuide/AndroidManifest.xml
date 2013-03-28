@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uwetrottmann.seriesguide"
-    android:versionCode="185"
-    android:versionName="2.9.7" >
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="185" android:versionName="2.9.7" package="com.uwetrottmann.seriesguide">
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
 
-</manifest>
+<uses-permission android:name="android.permission.INTERNET"/>
+   </manifest>

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/qafzZx-4Duppy76An4MtR8BzBVc\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/LU0o4J4691PdCf3rMhqu76Q2c0c\"",
  "discoveryVersion": "v1",
  "id": "showendpoint:v1",
  "name": "showendpoint",
@@ -11,8 +11,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://1.myapp.appspot.com/_ah/api/",
- "rpcUrl": "https://1.myapp.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://myapp.appspot.com/_ah/api/",
+ "rpcUrl": "https://myapp.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {

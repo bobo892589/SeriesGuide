@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://1.myapp.appspot.com/_ah/api",
+  "root" : "https://myapp.appspot.com/_ah/api",
   "name" : "deviceinfoendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://1.myapp.appspot.com/_ah/spi",
+    "bns" : "https://myapp.appspot.com/_ah/spi",
     "deadline" : 10.0,
     "type" : "lily"
   },
@@ -30,7 +30,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.removeDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.DeviceInfoEndpoint.removeDeviceInfo",
       "request" : {
         "parameters" : {
           "id" : {
@@ -50,7 +50,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.insertDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.DeviceInfoEndpoint.insertDeviceInfo",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -65,7 +65,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.listDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.DeviceInfoEndpoint.listDeviceInfo",
       "request" : {
         "parameters" : {
           "cursor" : {
@@ -89,7 +89,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.getDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.DeviceInfoEndpoint.getDeviceInfo",
       "request" : {
         "parameters" : {
           "id" : {
@@ -109,7 +109,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.updateDeviceInfo",
+      "rosyMethod" : "com.battlelancer.seriesguide.DeviceInfoEndpoint.updateDeviceInfo",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -154,12 +154,12 @@
       }
     },
     "methods" : {
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.removeDeviceInfo" : {
+      "com.battlelancer.seriesguide.DeviceInfoEndpoint.removeDeviceInfo" : {
         "response" : {
           "$ref" : "DeviceInfo"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.insertDeviceInfo" : {
+      "com.battlelancer.seriesguide.DeviceInfoEndpoint.insertDeviceInfo" : {
         "request" : {
           "$ref" : "DeviceInfo"
         },
@@ -167,17 +167,17 @@
           "$ref" : "DeviceInfo"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.listDeviceInfo" : {
+      "com.battlelancer.seriesguide.DeviceInfoEndpoint.listDeviceInfo" : {
         "response" : {
           "$ref" : "CollectionResponse_DeviceInfo"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.getDeviceInfo" : {
+      "com.battlelancer.seriesguide.DeviceInfoEndpoint.getDeviceInfo" : {
         "response" : {
           "$ref" : "DeviceInfo"
         }
       },
-      "com.battlelancer.seriesguide.beta.DeviceInfoEndpoint.updateDeviceInfo" : {
+      "com.battlelancer.seriesguide.DeviceInfoEndpoint.updateDeviceInfo" : {
         "request" : {
           "$ref" : "DeviceInfo"
         },

@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://1.myapp.appspot.com/_ah/api",
+  "root" : "https://myapp.appspot.com/_ah/api",
   "name" : "messageEndpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://1.myapp.appspot.com/_ah/spi",
+    "bns" : "https://myapp.appspot.com/_ah/spi",
     "deadline" : 10.0,
     "type" : "lily"
   },
@@ -30,7 +30,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.MessageEndpoint.sendMessage",
+      "rosyMethod" : "com.battlelancer.seriesguide.MessageEndpoint.sendMessage",
       "request" : {
         "parameters" : {
           "message" : {
@@ -50,7 +50,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.MessageEndpoint.listMessages",
+      "rosyMethod" : "com.battlelancer.seriesguide.MessageEndpoint.listMessages",
       "request" : {
         "parameters" : {
           "cursor" : {
@@ -132,9 +132,9 @@
       }
     },
     "methods" : {
-      "com.battlelancer.seriesguide.beta.MessageEndpoint.sendMessage" : {
+      "com.battlelancer.seriesguide.MessageEndpoint.sendMessage" : {
       },
-      "com.battlelancer.seriesguide.beta.MessageEndpoint.listMessages" : {
+      "com.battlelancer.seriesguide.MessageEndpoint.listMessages" : {
         "response" : {
           "$ref" : "CollectionResponse_MessageData"
         }

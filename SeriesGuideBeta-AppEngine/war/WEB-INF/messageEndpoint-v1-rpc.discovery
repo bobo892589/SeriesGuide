@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/utpRj5Q5Gpn5F4DUsYKtKh2Le8M\"",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/kCkOoLwNZEqwkPzzKwqGrO7ZW8w\"",
  "discoveryVersion": "v1",
  "id": "messageEndpoint:v1",
  "name": "messageEndpoint",
@@ -11,8 +11,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://1.myapp.appspot.com/_ah/api/",
- "rpcUrl": "https://1.myapp.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://myapp.appspot.com/_ah/api/",
+ "rpcUrl": "https://myapp.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {

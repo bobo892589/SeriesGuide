@@ -308,7 +308,7 @@
         </service>
         
         <!-- Google Cloud Endpoints -->
-        <service android:name=".GCMIntentService" />
+        <service android:name="com.battlelancer.seriesguide.cloud.GCMIntentService" />
 
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
@@ -326,7 +326,7 @@
         </receiver>
 
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.battlelancer.seriesguide.cloud.RegisterActivity"
             android:launchMode="singleTop" />
     </application>
 

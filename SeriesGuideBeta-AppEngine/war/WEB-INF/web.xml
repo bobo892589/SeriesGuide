@@ -5,7 +5,7 @@
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
   <init-param>
    <param-name>services</param-name>
-   <param-value>com.battlelancer.seriesguide.beta.DeviceInfoEndpoint,com.battlelancer.seriesguide.beta.MessageEndpoint,com.battlelancer.seriesguide.beta.ShowEndpoint</param-value>
+   <param-value>com.battlelancer.seriesguide.DeviceInfoEndpoint,com.battlelancer.seriesguide.MessageEndpoint,com.battlelancer.seriesguide.ShowEndpoint</param-value>
   </init-param>
  </servlet>
  <servlet-mapping>

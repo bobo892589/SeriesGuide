@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://1.myapp.appspot.com/_ah/api",
+  "root" : "https://myapp.appspot.com/_ah/api",
   "name" : "showendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://1.myapp.appspot.com/_ah/spi",
+    "bns" : "https://myapp.appspot.com/_ah/spi",
     "deadline" : 10.0,
     "type" : "lily"
   },
@@ -30,7 +30,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.listShow",
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.listShow",
       "request" : {
         "parameters" : {
           "cursor" : {
@@ -54,7 +54,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.insertShow",
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.insertShow",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -69,7 +69,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.removeShow",
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.removeShow",
       "request" : {
         "parameters" : {
           "id" : {
@@ -89,7 +89,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.getShow",
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.getShow",
       "request" : {
         "parameters" : {
           "id" : {
@@ -109,7 +109,7 @@
       "scopes" : [ ],
       "audiences" : [ ],
       "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.beta.ShowEndpoint.updateShow",
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.updateShow",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -159,12 +159,12 @@
       }
     },
     "methods" : {
-      "com.battlelancer.seriesguide.beta.ShowEndpoint.listShow" : {
+      "com.battlelancer.seriesguide.ShowEndpoint.listShow" : {
         "response" : {
           "$ref" : "CollectionResponse_Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.ShowEndpoint.insertShow" : {
+      "com.battlelancer.seriesguide.ShowEndpoint.insertShow" : {
         "request" : {
           "$ref" : "Show"
         },
@@ -172,17 +172,17 @@
           "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.ShowEndpoint.removeShow" : {
+      "com.battlelancer.seriesguide.ShowEndpoint.removeShow" : {
         "response" : {
           "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.ShowEndpoint.getShow" : {
+      "com.battlelancer.seriesguide.ShowEndpoint.getShow" : {
         "response" : {
           "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.beta.ShowEndpoint.updateShow" : {
+      "com.battlelancer.seriesguide.ShowEndpoint.updateShow" : {
         "request" : {
           "$ref" : "Show"
         },
