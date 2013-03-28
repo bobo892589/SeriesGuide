@@ -1,13 +1,5 @@
 package com.battlelancer.seriesguide;
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.annotation.Nullable;
-import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 import com.google.android.gcm.server.Constants;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
@@ -16,6 +8,14 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.response.CollectionResponse;
 import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.datanucleus.query.JPACursorHelper;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.annotation.Nullable;
+import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 
 /**
@@ -51,7 +51,7 @@ public class MessageEndpoint {
    * Google Cloud Messaging from your AppEngine application even if you are
    * using a App Engine's local development server.
    */
-  private static final String API_KEY = "AIzaSyAZttbJF2fHdq2OD8SKlq1vNjFFSrWyL_8";
+  private static final String API_KEY = "AIzaSyAUTLoD7QYY8ZozvNTXWMUN3pFyyi5yA_g";
 
   private static final DeviceInfoEndpoint endpoint = new DeviceInfoEndpoint();
   
