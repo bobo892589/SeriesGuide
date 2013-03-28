@@ -311,7 +311,7 @@
         <service android:name="com.battlelancer.seriesguide.cloud.GCMIntentService" />
 
         <receiver
-            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:name="com.battlelancer.seriesguide.cloud.SeriesGuideGCMBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
