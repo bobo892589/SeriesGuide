@@ -317,6 +317,9 @@
         <item>two weeks</item>
         <item>a month</item>
     </string-array>
+    
+    <!-- Service settings -->
+    <string name="pref_cloud">Connect to SeriesGuide Cloud</string>
 
     <!-- Appearance settings -->
     <string name="pref_appearance">Appearance</string>

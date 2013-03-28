@@ -9,8 +9,8 @@
     <PreferenceCategory android:title="@string/trakt" >
         <Preference
             android:key="com.battlelancer.seriesguide.trakt.connect"
-            android:title="@string/connect_trakt"
-            android:summary="@string/pref_traktsummary" >
+            android:summary="@string/pref_traktsummary"
+            android:title="@string/connect_trakt" >
             <intent
                 android:targetClass="com.battlelancer.seriesguide.ui.ConnectTraktActivity"
                 android:targetPackage="@string/package_name" />
@@ -29,5 +29,13 @@
             android:summary="@string/pref_autoaddshowssummary"
             android:title="@string/pref_autoaddshows" />
     </PreferenceCategory>
+
+    <Preference
+        android:key="com.battlelancer.seriesguide.cloud"
+        android:title="@string/pref_cloud" >
+        <intent
+            android:targetClass="com.battlelancer.seriesguide.cloud.RegisterActivity"
+            android:targetPackage="@string/package_name" />
+    </Preference>
 
 </PreferenceScreen>
