@@ -284,7 +284,7 @@ public class UpdateTask extends AsyncTask<Void, Integer, UpdateResult> {
 
             // EXPERIMENTAL //////////////////////////////////
             // Sync with SeriesGuide Cloud
-            syncWithSeriesGuideCloud(resolver);
+//            syncWithSeriesGuideCloud(resolver);
 
             publishProgress(maxProgress, maxProgress);
 
