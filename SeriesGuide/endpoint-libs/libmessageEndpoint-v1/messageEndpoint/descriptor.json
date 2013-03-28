@@ -1,11 +1,11 @@
 {
   "files": [
     {
-      "path": "myapp-messageEndpoint-v1-20130328193003-java-1.14.1-beta-sources.jar", 
+      "path": "seriesguide-cloud-messageEndpoint-v1-20130328194217-java-1.14.1-beta-sources.jar", 
       "type": "source"
     }, 
     {
-      "path": "myapp-messageEndpoint-v1-20130328193003-java-1.14.1-beta.jar.properties", 
+      "path": "seriesguide-cloud-messageEndpoint-v1-20130328194217-java-1.14.1-beta.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -687,7 +687,7 @@
     }
   ], 
   "language_version": "1.14.1-beta", 
-  "revision": 20130328193003, 
+  "revision": 20130328194217, 
   "id": "messageEndpoint:v1", 
   "name": "messageEndpoint"
 }

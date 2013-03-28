@@ -1,12 +1,12 @@
 {
   "extends" : "thirdParty.api",
   "abstract" : false,
-  "root" : "https://myapp.appspot.com/_ah/api",
+  "root" : "https://seriesguide-cloud.appspot.com/_ah/api",
   "name" : "showendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
-    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "bns" : "https://seriesguide-cloud.appspot.com/_ah/spi",
     "deadline" : 10.0,
     "type" : "lily"
   },
@@ -83,6 +83,21 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "showendpoint.updateShow" : {
+      "path" : "show",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.updateShow",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "showendpoint.getShow" : {
       "path" : "show/{id}",
       "httpMethod" : "GET",
@@ -98,21 +113,6 @@
           }
         },
         "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "showendpoint.updateShow" : {
-      "path" : "show",
-      "httpMethod" : "PUT",
-      "scopes" : [ ],
-      "audiences" : [ ],
-      "clientIds" : [ ],
-      "rosyMethod" : "com.battlelancer.seriesguide.ShowEndpoint.updateShow",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -177,15 +177,15 @@
           "$ref" : "Show"
         }
       },
-      "com.battlelancer.seriesguide.ShowEndpoint.getShow" : {
-        "response" : {
-          "$ref" : "Show"
-        }
-      },
       "com.battlelancer.seriesguide.ShowEndpoint.updateShow" : {
         "request" : {
           "$ref" : "Show"
         },
+        "response" : {
+          "$ref" : "Show"
+        }
+      },
+      "com.battlelancer.seriesguide.ShowEndpoint.getShow" : {
         "response" : {
           "$ref" : "Show"
         }

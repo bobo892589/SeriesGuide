@@ -1,11 +1,11 @@
 {
   "files": [
     {
-      "path": "myapp-showendpoint-v1-20130328192905-java-1.14.1-beta-sources.jar", 
+      "path": "seriesguide-cloud-showendpoint-v1-20130328194135-java-1.14.1-beta-sources.jar", 
       "type": "source"
     }, 
     {
-      "path": "myapp-showendpoint-v1-20130328192905-java-1.14.1-beta.jar.properties", 
+      "path": "seriesguide-cloud-showendpoint-v1-20130328194135-java-1.14.1-beta.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -687,7 +687,7 @@
     }
   ], 
   "language_version": "1.14.1-beta", 
-  "revision": 20130328192905, 
+  "revision": 20130328194135, 
   "id": "showendpoint:v1", 
   "name": "showendpoint"
 }
