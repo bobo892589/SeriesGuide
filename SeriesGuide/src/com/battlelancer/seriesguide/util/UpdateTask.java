@@ -36,6 +36,7 @@ import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.battlelancer.seriesguide.SeriesGuideApplication;
+import com.battlelancer.seriesguide.cloud.CloudEndpointUtils;
 import com.battlelancer.seriesguide.items.SearchResult;
 import com.battlelancer.seriesguide.provider.SeriesContract.Episodes;
 import com.battlelancer.seriesguide.provider.SeriesContract.Shows;
@@ -43,6 +44,10 @@ import com.battlelancer.seriesguide.ui.SeriesGuidePreferences;
 import com.battlelancer.seriesguide.ui.ShowsActivity;
 import com.battlelancer.thetvdbapi.TheTVDB;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.jakewharton.apibuilder.ApiException;
 import com.jakewharton.trakt.ServiceManager;
 import com.jakewharton.trakt.TraktException;
@@ -52,11 +57,15 @@ import com.jakewharton.trakt.entities.TvShowEpisode;
 import com.jakewharton.trakt.enumerations.ActivityAction;
 import com.jakewharton.trakt.enumerations.ActivityType;
 import com.uwetrottmann.seriesguide.R;
+import com.uwetrottmann.seriesguide.showendpoint.Showendpoint;
+import com.uwetrottmann.seriesguide.showendpoint.model.CollectionResponseShow;
+import com.uwetrottmann.seriesguide.showendpoint.model.Show;
 import com.uwetrottmann.tmdb.TmdbException;
 import com.uwetrottmann.tmdb.entities.Configuration;
 
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -220,10 +229,10 @@ public class UpdateTask extends AsyncTask<Void, Integer, UpdateResult> {
 
                 try {
                     TheTVDB.updateShow(id, mAppContext);
-                    
+
                     // make sure overview and details loaders are notified
                     resolver.notifyChange(Episodes.CONTENT_URI_WITHSHOW, null);
-                    
+
                     break;
                 } catch (SAXException e) {
                     if (itry == 1) {
@@ -272,6 +281,10 @@ public class UpdateTask extends AsyncTask<Void, Integer, UpdateResult> {
             if (resultCode == UpdateResult.SILENT_SUCCESS) {
                 resultCode = traktResult;
             }
+
+            // EXPERIMENTAL //////////////////////////////////
+            // Sync with SeriesGuide Cloud
+            syncWithSeriesGuideCloud(resolver);
 
             publishProgress(maxProgress, maxProgress);
 
@@ -461,6 +474,43 @@ public class UpdateTask extends AsyncTask<Void, Integer, UpdateResult> {
             mCurrentShowName = show.getString(0);
         }
         show.close();
+    }
+
+    private void syncWithSeriesGuideCloud(ContentResolver resolver) {
+        Showendpoint.Builder endpointBuilder = new Showendpoint.Builder(
+                AndroidHttp.newCompatibleTransport(), new JacksonFactory(),
+                new HttpRequestInitializer() {
+                    @Override
+                    public void initialize(HttpRequest arg0) throws IOException {
+                    }
+                });
+        Showendpoint endpoint = CloudEndpointUtils.updateBuilder(endpointBuilder).build();
+
+        CollectionResponseShow result = null;
+        try {
+            result = endpoint.listShow().execute();
+        } catch (IOException e) {
+            Utils.trackExceptionAndLog(mAppContext, TAG, e);
+        }
+
+        final Cursor localShows = resolver.query(Shows.CONTENT_URI, new String[] {
+                Shows._ID, Shows.FAVORITE, Shows.HIDDEN, Shows.SYNCENABLED, Shows.GETGLUEID
+        }, null, null, null);
+
+        if (result == null || localShows == null) {
+            return;
+        }
+
+        List<Show> cloudShows = result.getItems();
+
+        if (cloudShows == null || !localShows.moveToFirst()) {
+            localShows.close();
+            return;
+        }
+
+        // TODO compare local to cloud shows and merge
+
+        localShows.close();
     }
 
     @Override
