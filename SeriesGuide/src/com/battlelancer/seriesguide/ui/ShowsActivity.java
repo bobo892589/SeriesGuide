@@ -90,7 +90,9 @@ public class ShowsActivity extends BaseTopShowsActivity implements CompatActionB
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shows);
+
+        // setup nav drawer
+        getMenu().setContentView(R.layout.shows);
 
         final SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
@@ -118,7 +120,6 @@ public class ShowsActivity extends BaseTopShowsActivity implements CompatActionB
 
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setIcon(R.drawable.ic_action_menu);
 
         /* setup navigation */
         CompatActionBarNavHandler handler = new CompatActionBarNavHandler(this);

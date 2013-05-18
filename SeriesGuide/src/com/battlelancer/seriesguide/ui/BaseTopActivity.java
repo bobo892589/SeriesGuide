@@ -4,7 +4,6 @@ package com.battlelancer.seriesguide.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.uwetrottmann.seriesguide.R;
@@ -18,9 +17,9 @@ public abstract class BaseTopActivity extends BaseActivity {
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
-        final ActionBar actionBar = getSupportActionBar();
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        // setup nav drawer to show special indicator
+        getMenu().setSlideDrawable(R.drawable.ic_drawer);
+        getMenu().setDrawerIndicatorEnabled(true);
     }
 
     @Override
