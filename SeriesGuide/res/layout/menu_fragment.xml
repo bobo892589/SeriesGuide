@@ -1,37 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+android:id/list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_lighter"
-    android:orientation="vertical" >
+    android:clipToPadding="@bool/gridClipToPadding"
+    android:gravity="center"
+    android:listSelector="?attr/custom_list_selector" >
 
-    <LinearLayout
-        android:id="@+id/containerMenuLogo"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/background"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:layout_width="?actionBarSize"
-            android:layout_height="?actionBarSize"
-            android:contentDescription="@string/app_name"
-            android:padding="@dimen/default_padding"
-            android:src="@drawable/ic_launcher" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="?attr/colorAccent" />
-
-    <ListView
-        android:id="@+android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="@bool/gridClipToPadding"
-        android:gravity="center"
-        android:listSelector="?attr/custom_list_selector" >
-    </ListView>
-
-</LinearLayout>
+</ListView>
