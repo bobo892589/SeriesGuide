@@ -50,10 +50,10 @@ public class FixGetGlueCheckInActivity extends BaseActivity implements
     @Override
     protected void onCreate(Bundle args) {
         super.onCreate(args);
-        setContentView(R.layout.activity_fix_get_glue);
+        getMenu().setContentView(R.layout.activity_fix_get_glue);
 
         setTitle(R.string.checkin_fixgetglue);
-        
+
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
 
@@ -98,7 +98,7 @@ public class FixGetGlueCheckInActivity extends BaseActivity implements
         }
 
     }
-    
+
     @Override
     protected void onStart() {
         super.onStart();

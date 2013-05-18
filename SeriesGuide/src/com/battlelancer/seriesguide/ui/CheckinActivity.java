@@ -69,8 +69,7 @@ public class CheckinActivity extends BaseActivity implements LoaderCallbacks<Cur
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-
-        setContentView(R.layout.checkin);
+        getMenu().setContentView(R.layout.checkin);
 
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getString(R.string.checkin));
