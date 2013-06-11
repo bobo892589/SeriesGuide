@@ -13,7 +13,7 @@
     <string name="getglue">GetGlue</string>
     <string name="notraktrating">--%</string>
     <string name="gobreak">Go break things</string>
-    <string name="betamessage">Heads up! New beta program\n\nSeriesGuide moves towards one app version, SeriesGuide beta will therefore not receive further updates. Please join the new beta program for the SeriesGuide app! Start by downloading the regular version below and then read the instructions:\n\n<a href="https://github.com/UweTrottmann/SeriesGuide/wiki/Beta">New Beta program</a></string>
+    <string name="betamessage">Heads up! New beta program!\n\nSeriesGuide moves towards one app version, SeriesGuide beta will therefore <b>not receive further updates</b>.\n\nPlease <b>join the new beta program</b> for the SeriesGuide app! Start by reading the instructions and then download the regular version below:\n\n<a href="https://github.com/UweTrottmann/SeriesGuide/wiki/Beta">New Beta program</a></string>
     <string name="help_url">http://seriesgui.de/help</string>
     <string name="backup_legacy_warning">This is the legacy backup system. It will get removed with the next update. If you want to restore an old backup, now would be the time. You can then export again using the new export tool.</string>
 	<string name="not_available">n/a</string>
